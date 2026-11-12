@@ -3,34 +3,40 @@ tipo: documento
 categoria: planejamento-tecnico
 projeto: CODEXIA
 status: planejamento-inicial
-versao: 0.1
+versao: 0.2
 idioma: pt-BR
 tags:
   - codexia
   - unity
+  - urp
   - arquitetura
   - cena-base
 ---
 
 # CODEXIA — Planejamento da Base Técnica e Cena de Validação
 
-> Planejamento inicial. Não representa implementação concluída nem aprova sistemas de RPG. A arquitetura e as configurações finais dependem de validação no Unity e atualização do GDD.
+> Planejamento inicial. Não representa implementação concluída nem aprova sistemas de RPG. A arquitetura e as configurações finais dependem de validação no Unity.
 
 ## 1. Objetivo da primeira base
 
 Preparar uma cena de validação visual e técnica que demonstre a identidade ambiental do CODEXIA usando os assets existentes, antes da implementação do protagonista original e dos sistemas avançados.
 
-A base deverá permitir avaliar:
-- leitura do terreno e das transições;
-- coerência entre tiles, vegetação, objetos, estruturas e sombras;
-- escala visual e enquadramento da câmera;
-- organização de camadas e ordenação de sprites;
-- circulação e clareza dos caminhos;
-- desempenho inicial da cena.
+A base deverá permitir avaliar leitura do terreno, transições, coerência entre tiles, vegetação, objetos, estruturas e sombras, escala visual, câmera, sorting, circulação e desempenho inicial.
 
-## 2. Conteúdo visual previsto
+## 2. Configuração aprovada
 
-A composição deverá usar exclusivamente recursos adequados já existentes no pacote principal:
+- Engine: Unity 6.3.
+- Template planejado: 2D (URP).
+- Render pipeline: Universal Render Pipeline.
+- Renderer: 2D Renderer.
+- Linguagem: C# (versão/configuração definida pela instalação do editor).
+- Plataforma inicial de teste: ainda a confirmar.
+
+A configuração deverá ser criada pelo Unity Hub/editor. Não copiar ProjectSettings do pacote de terceiros para o projeto CODEXIA.
+
+## 3. Conteúdo visual previsto
+
+A composição deverá usar recursos adequados já existentes no pacote principal:
 - tiles de grama e pedra;
 - tiles de parede/estrutura quando necessários;
 - prefabs de vegetação;
@@ -41,49 +47,50 @@ Não criar sprites, ícones, personagens, texturas ou ilustrações novas. Não 
 
 O protagonista não será incluído nesta primeira base. O prefab demonstrativo do pacote não será colocado como personagem jogável.
 
-## 3. Organização técnica a avaliar
+## 4. Organização técnica a avaliar
 
-A arquitetura deverá separar responsabilidades sem antecipar sistemas não aprovados:
-- cena de validação ambiental;
-- organização de Tilemaps por função, a confirmar após inspeção;
-- camadas de sorting para chão, objetos, vegetação e estruturas, a validar com os prefabs;
-- colisões apenas onde os assets e o desenho do espaço exigirem;
-- câmera ortográfica top-down, com escala a definir por teste;
-- separação entre recursos originais do pacote e arquivos próprios de CODEXIA.
+- Cena de validação ambiental separada das cenas demonstrativas do pacote.
+- Tilemaps organizados por função, conforme os tiles existentes e o resultado da inspeção.
+- Sorting Layers para chão, objetos, vegetação e estruturas, a validar com os prefabs.
+- Colisões apenas onde os assets e o desenho do espaço exigirem.
+- Câmera ortográfica top-down, com escala a definir por teste.
+- Separação entre recursos originais do pacote e arquivos próprios de CODEXIA.
+- Nenhum script próprio nesta etapa. Os cinco scripts do pacote devem ser avaliados individualmente antes de qualquer decisão de reutilização.
 
-Não criar scripts próprios nesta etapa. Os cinco scripts do pacote devem ser avaliados individualmente antes de qualquer decisão de reutilização.
+## 5. Sequência de preparação no Unity
 
-## 4. Sequência de preparação
+1. Instalar/abrir Unity Hub e instalar Unity 6.3 com os módulos necessários ao ambiente de teste.
+2. Criar um projeto novo usando o template **2D (URP)**.
+3. Nomear o projeto como CODEXIA e escolher uma pasta de desenvolvimento separada do vault do Obsidian.
+4. Fazer uma cópia de segurança do ZIP original antes da importação.
+5. Importar o Unity Package original pelo Package Import, sem editar seus arquivos.
+6. Conferir se o pipeline ativo usa o URP 2D Renderer e se materiais/shaders do pacote são compatíveis.
+7. Abrir as cenas demonstrativas em modo de inspeção; não salvar alterações nelas.
+8. Verificar prefabs, Tile Palettes, texturas, animações, pivôs, pixels por unidade, sorting layers e colisores.
+9. Criar uma cena própria de CODEXIA somente após compreender a organização dos recursos.
+10. Compor a cena de validação com os assets existentes.
+11. Testar visual, circulação, ordenação e desempenho.
+12. Registrar resultados e decisões aprovadas no GDD.
 
-1. Confirmar versão Unity e pipeline de renderização.
-2. Criar projeto Unity limpo, sem sobrescrever o pacote original.
-3. Importar o Unity Package original como dependência visual, preservando sua pasta e metadados.
-4. Inspecionar as cenas demonstrativas e os prefabs no editor.
-5. Validar pixels por unidade, pivôs, sorting layers, colisores e animações.
-6. Definir a grade prática e a escala da câmera com base nos recursos reais.
-7. Planejar a composição da cena-base com tiles e prefabs existentes.
-8. Montar a cena de validação sem protagonista nem sistemas de RPG.
-9. Testar leitura visual, circulação e desempenho.
-10. Registrar resultados e decisões aprovadas no GDD.
-
-## 5. Cuidados com arquivos originais
+## 6. Cuidados com arquivos originais
 
 - Manter o ZIP original intacto.
 - Não editar diretamente arquivos do pacote.
 - Não copiar os arquivos de ProjectSettings do projeto de origem para o projeto de CODEXIA sem análise.
-- Não alterar os scripts, sprites, texturas, materiais, prefabs, animações ou cenas originais.
+- Não alterar scripts, sprites, texturas, materiais, prefabs, animações ou cenas originais.
 - Arquivos específicos de CODEXIA deverão ficar separados e identificados como próprios do projeto.
 - Qualquer adaptação deverá preservar o original e ser aprovada antes de execução.
+- Ao inspecionar cenas demonstrativas, descartar alterações não intencionais em vez de salvar sobre as cenas originais.
 
-## 6. Dependências e bloqueios atuais
+## 7. Dependências e bloqueios atuais
 
-- A versão Unity ainda não está definida no GDD.
-- O changelog do pacote 1.2.3 cita correção de shader para URP 2D no Unity 6.3; isso deve orientar o teste de compatibilidade, sem ser tratado como escolha já aprovada.
-- A referência de água **Top Down Kingdom 2D** ainda não está disponível para inspeção.
-- Ainda é necessário validar os assets no editor Unity, pois a inspeção do ZIP não substitui a abertura das cenas e prefabs no próprio editor.
-- O projeto Unity de CODEXIA ainda precisa ser criado/configurado.
+- O pacote complementar de água **Top Down Kingdom 2D** será enviado pelo usuário em outra conversa; sua inspeção está pendente.
+- A versão Unity 6.3 e URP 2D foram aprovados, mas ainda precisam ser instalados/configurados no ambiente de desenvolvimento.
+- A inspeção do ZIP não substitui a abertura das cenas e prefabs no editor.
+- A plataforma inicial de teste (Windows ou outra) ainda precisa ser confirmada.
+- Escala de câmera, pixels por unidade, sorting e colisões dependem da inspeção no editor.
 
-## 7. Fora desta base
+## 8. Fora desta base
 
 - Protagonista original.
 - Combate, armas, poderes, classes e progressão.
@@ -92,7 +99,7 @@ Não criar scripts próprios nesta etapa. Os cinco scripts do pacote devem ser a
 - Geração procedural em escala de mundo.
 - Arte nova ou substituição de recursos existentes.
 
-## 8. Critérios para considerar a base validada
+## 9. Critérios para considerar a base validada
 
 - Os assets originais são exibidos sem alteração visual.
 - A cena mantém coerência de escala e composição.
@@ -102,6 +109,7 @@ Não criar scripts próprios nesta etapa. Os cinco scripts do pacote devem ser a
 - A cena executa de forma estável no ambiente de teste.
 - Todas as decisões técnicas aprovadas são registradas no GDD.
 
-## 9. Histórico
+## 10. Histórico
 
 - **0.1:** planejamento inicial da base técnica e da cena de validação, sem implementação.
+- **0.2:** Unity 6.3 com URP 2D aprovada; sequência de preparação atualizada.
