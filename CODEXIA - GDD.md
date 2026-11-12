@@ -3,7 +3,7 @@ tipo: documento
 categoria: game-design
 projeto: CODEXIA
 status: em-andamento
-versao: 0.3
+versao: 0.4
 idioma: pt-BR
 tags:
   - codexia
@@ -26,7 +26,7 @@ CODEXIA é um RPG 2D em pixel art, com câmera top-down e mundo aberto conectado
 |---|---|
 | Nome | CODEXIA |
 | Gênero | RPG |
-| Engine | Unity 6.3 |
+| Engine | Unity 6.3 LTS (6000.3.28f1) |
 | Renderização | Universal Render Pipeline (URP), com Renderer 2D |
 | Dimensão | 2D |
 | Câmera | Top-down |
@@ -156,6 +156,8 @@ Esses tópicos dependem de planejamento e aprovação explícita.
 - Referência visual principal: Pixel Art Top Down - Basic v1.2.3.
 - Protagonista original; personagem demonstrativo do pacote não será usado como protagonista ou personagem jogável.
 - Água inspirada visualmente em Top Down Kingdom 2D; pacote será enviado para inspeção.
+- Versão instalada da engine: Unity 6.3 LTS **6000.3.28f1**, com Visual Studio Community 2026 como editor de C#. A Unity 6.6 já instalada no computador não é usada no CODEXIA.
+- Projeto Unity em `V:\Programação\CODEXIA Unity\CODEXIA`, fora do cofre do Obsidian, criado pelo template Universal 2D (URP com Renderer 2D).
 - Preservação dos assets originais.
 - Utilizar os assets existentes como base visual; não gerar arte nova nem substituir assets adequados por placeholders.
 - Planejamento e organização antes de implementação.
@@ -173,6 +175,7 @@ Esses tópicos dependem de planejamento e aprovação explícita.
 - [[Manual de Identidade Visual]] — diretrizes visuais preliminares derivadas dos recursos existentes.
 - [[Planejamento da Base Técnica]] — planejamento da base técnica e da cena de validação.
 - [[Arquitetura Técnica Inicial]] — organização preliminar do projeto Unity 6.3 com URP 2D.
+- [[Relatório de Validação Técnica]] — instalação, importação e dados técnicos verificados no editor.
 - Documento de Level Design — a desenvolver.
 - Documento de Sistemas de Jogo — a desenvolver.
 - Lore e Universo — a desenvolver.
@@ -183,6 +186,7 @@ Esses tópicos dependem de planejamento e aprovação explícita.
 - **0.1:** consolidação inicial das informações e decisões existentes no planejamento do CODEXIA.
 - **0.2:** inclusão das regras reforçadas de uso dos assets e registro dos documentos iniciais de catálogo, identidade visual e planejamento da base técnica.
 - **0.3:** aprovação da Unity 6.3 com URP 2D; registro da preparação técnica inicial e envio posterior do pacote complementar de água.
+- **0.4:** Unity 6.3 LTS (6000.3.28f1) instalada; projeto CODEXIA criado com o template Universal 2D; pacote principal importado sem ProjectSettings; criação do [[Relatório de Validação Técnica]].
 
 ## 15. Estado atual do trabalho
 
@@ -194,14 +198,18 @@ Esses tópicos dependem de planejamento e aprovação explícita.
 - Criação do [[Manual de Identidade Visual]] preliminar.
 - Criação do [[Planejamento da Base Técnica]].
 - Aprovação da Unity 6.3 com URP 2D.
+- Instalação da Unity 6.3 LTS (6000.3.28f1) com Visual Studio Community 2026.
+- Criação do projeto CODEXIA (template Universal 2D), com URP e Renderer 2D confirmados nos arquivos do projeto; o projeto abre sem erros.
+- Cópia de segurança do ZIP original, conferida por SHA-256, em `V:\Programação\CODEXIA Backups\`.
+- Importação do pacote principal sem os 18 arquivos de ProjectSettings do projeto de origem; 0 erros e 1 aviso no Console; arquivos conferidos byte a byte contra o original.
+- Inspeção da cena SC Demo (sem salvar) e levantamento de PPU, pivôs, sorting, colisores, câmera e shaders. Detalhes no [[Relatório de Validação Técnica]].
 
 ### Próximas atividades
 
-- Preparar o projeto Unity 6.3 usando o template 2D (URP).
-- Importar o pacote principal preservando os arquivos e metadados originais.
-- Inspecionar as cenas demonstrativas, prefabs e configurações no editor.
-- Validar escala, pixels por unidade, pivôs, sorting, colisores e câmera.
-- Inspecionar o pacote complementar de água quando enviado.
-- Planejar e montar a cena-base após a validação dos assets.
+- Decidir como tratar as Sorting Layers e camadas de física das quais o pacote depende (Layer 1, 2 e 3).
+- Decidir sobre o patch URP 2D Lit para Unity 6.3 incluído no pacote.
+- Inspecionar a cena SC All Props e validar a ordenação no Game View.
+- Inspecionar o pacote complementar de água quando enviado. Até agora só foi recebida uma imagem de referência (`TX waterreference.jpg`).
+- Planejar e montar a cena-base após essas decisões.
 
-A documentação e o planejamento foram atualizados; isso não significa que o projeto Unity já foi criado ou que os assets foram importados.
+O protagonista, os scripts próprios e a cena de validação ainda não foram criados.

@@ -3,7 +3,7 @@ tipo: documento
 categoria: arquitetura-tecnica
 projeto: CODEXIA
 status: proposta-inicial
-versao: 0.1
+versao: 0.2
 idioma: pt-BR
 tags:
   - codexia
@@ -23,6 +23,15 @@ tags:
 - 2D Renderer.
 - C#.
 - Projeto criado a partir do template 2D (URP).
+
+### 1.1 Ambiente verificado (12/11/2026)
+
+- Editor: Unity 6.3 LTS **6000.3.28f1**; editor de C#: Visual Studio Community 2026.
+- Projeto: `V:\Programação\CODEXIA Unity\CODEXIA` (template Universal 2D, projeto local).
+- URP 17.3.0; `UniversalRP.asset` em todos os níveis de qualidade; renderer padrão `Renderer2D.asset`.
+- Espaço de cor Linear; entrada pelo novo Input System (1.20.1), apenas.
+- Pacote principal importado em `Assets/Cainos/Pixel Art Top Down - Basic/`, sem ProjectSettings de origem.
+- A pasta `Assets/CODEXIA/` ainda não foi criada; seguirá a regra de só criar pastas quando houver conteúdo.
 
 ## 2. Princípios
 
@@ -110,3 +119,4 @@ A seleção final de assets da cena de validação deverá ser feita com base no
 ## 10. Histórico
 
 - **0.1:** proposta inicial de arquitetura para Unity 6.3 com URP 2D.
+- **0.2:** registro do ambiente verificado após a criação do projeto e a importação do pacote.

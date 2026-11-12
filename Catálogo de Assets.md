@@ -3,7 +3,7 @@ tipo: documento
 categoria: game-design
 projeto: CODEXIA
 status: catalogo-inicial
-versao: 0.1
+versao: 0.2
 idioma: pt-BR
 tags:
   - codexia
@@ -134,6 +134,14 @@ Os metadados originais devem ser mantidos. A configuração final de importaçã
 
 O GDD cita **Top Down Kingdom 2D** como referência complementar para a água. Esse pacote não foi encontrado entre os arquivos disponíveis na Biblioteca consultada nesta etapa. Portanto, nenhum recurso de água desse pacote foi incluído ou avaliado neste catálogo.
 
+## 9.1 Achados da importação no Unity (12/11/2026)
+
+- **Pacotes internos não catalogados na v0.1:** `Patch - URP 2D Lit - Unity 6.0 to 6.2.unitypackage`, `Patch - URP 2D Lit - Unity 6.3.unitypackage` e `Patch - URP 2D Lit.unitypackage`. Foram importados como arquivos e **não foram aplicados**.
+- **Dependência de configurações:** os prefabs e cenas usam as Sorting Layers Layer 1, 2 e 3 e as camadas de física Layer 1, 2 e 3 (índices 20–22), definidas no `TagManager.asset` do projeto de origem.
+- **PPU 32** em todas as texturas; pivô central nos tiles e na base em objetos e vegetação.
+- **ZIP atual diferente do catalogado:** 3.447.959 bytes (antes 2.622.004). Foi incluído `Texture/TX waterreference.jpg` (imagem de referência de água, 1077×1065). O `.unitypackage` interno não mudou.
+- Detalhes no [[Relatório de Validação Técnica]].
+
 ## 10. Próximas verificações
 
 - Importar o pacote em projeto Unity de teste, preservando a cópia original.
@@ -145,3 +153,4 @@ O GDD cita **Top Down Kingdom 2D** como referência complementar para a água. E
 ## 11. Histórico
 
 - **0.1:** inventário inicial realizado a partir do ZIP original, em modo somente leitura.
+- **0.2:** registro dos achados da importação no Unity 6.3: patches URP 2D Lit, dependência de Sorting Layers e camadas, PPU e divergência do ZIP.

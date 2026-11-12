@@ -3,7 +3,7 @@ tipo: documento
 categoria: planejamento-tecnico
 projeto: CODEXIA
 status: planejamento-inicial
-versao: 0.2
+versao: 0.3
 idioma: pt-BR
 tags:
   - codexia
@@ -72,6 +72,21 @@ O protagonista não será incluído nesta primeira base. O prefab demonstrativo 
 11. Testar visual, circulação, ordenação e desempenho.
 12. Registrar resultados e decisões aprovadas no GDD.
 
+### 5.1 Situação da sequência (12/11/2026)
+
+| Passo | Situação |
+|---|---|
+| 1. Unity Hub e Unity 6.3 | ✅ Unity 6.3 LTS 6000.3.28f1 instalada |
+| 2–3. Projeto CODEXIA (2D URP) | ✅ Criado em `V:\Programação\CODEXIA Unity\CODEXIA` com o template Universal 2D |
+| 4. Backup do ZIP | ✅ `V:\Programação\CODEXIA Backups\`, conferido por SHA-256 |
+| 5. Importação | ✅ Sem ProjectSettings; 0 erros e 1 aviso |
+| 6. URP 2D Renderer e shaders | ✅ Renderer 2D ativo; materiais renderizam sem erro. ⏳ Luzes 2D não testadas |
+| 7. Cenas demonstrativas | ✅ SC Demo inspecionada sem salvar. ⏳ SC All Props pendente |
+| 8. Propriedades técnicas | ✅ Levantadas. ⏳ Sorting depende de decisão |
+| 9–12. Cena própria, composição, testes e registro final | ⏳ Pendentes |
+
+Detalhes no [[Relatório de Validação Técnica]].
+
 ## 6. Cuidados com arquivos originais
 
 - Manter o ZIP original intacto.
@@ -85,7 +100,8 @@ O protagonista não será incluído nesta primeira base. O prefab demonstrativo 
 ## 7. Dependências e bloqueios atuais
 
 - O pacote complementar de água **Top Down Kingdom 2D** será enviado pelo usuário em outra conversa; sua inspeção está pendente.
-- A versão Unity 6.3 e URP 2D foram aprovados, mas ainda precisam ser instalados/configurados no ambiente de desenvolvimento.
+- ~~A versão Unity 6.3 e URP 2D ainda precisam ser instalados/configurados.~~ Resolvido em 12/11/2026 (6000.3.28f1).
+- O pacote depende das Sorting Layers e camadas de física Layer 1, 2 e 3 do projeto de origem, que não foram importadas. A solução aguarda decisão.
 - A inspeção do ZIP não substitui a abertura das cenas e prefabs no editor.
 - A plataforma inicial de teste (Windows ou outra) ainda precisa ser confirmada.
 - Escala de câmera, pixels por unidade, sorting e colisões dependem da inspeção no editor.
@@ -113,3 +129,4 @@ O protagonista não será incluído nesta primeira base. O prefab demonstrativo 
 
 - **0.1:** planejamento inicial da base técnica e da cena de validação, sem implementação.
 - **0.2:** Unity 6.3 com URP 2D aprovada; sequência de preparação atualizada.
+- **0.3:** passos 1 a 8 executados e verificados; dependência de Sorting Layers registrada.
