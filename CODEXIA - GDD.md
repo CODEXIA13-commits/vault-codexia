@@ -3,7 +3,7 @@ tipo: documento
 categoria: game-design
 projeto: CODEXIA
 status: em-andamento
-versao: 0.2
+versao: 0.3
 idioma: pt-BR
 tags:
   - codexia
@@ -26,14 +26,15 @@ CODEXIA é um RPG 2D em pixel art, com câmera top-down e mundo aberto conectado
 |---|---|
 | Nome | CODEXIA |
 | Gênero | RPG |
-| Engine | Unity |
+| Engine | Unity 6.3 |
+| Renderização | Universal Render Pipeline (URP), com Renderer 2D |
 | Dimensão | 2D |
 | Câmera | Top-down |
 | Direção visual | Pixel art |
 | Referência de grade | Células de 32×32 px (referência de organização, não tamanho obrigatório de todo sprite) |
 | Linguagem planejada | C# |
 | Idioma | Português (PT-BR) |
-| Renderização | Procedural / híbrida com sprites e texturas |
+| Renderização visual | Procedural / híbrida com sprites e texturas |
 | Mundo | Aberto e conectado |
 | Construção dos mapas | Manual, procedural controlada e híbrida |
 | Lore | A definir |
@@ -64,7 +65,7 @@ O pacote **Pixel Art Top Down - Basic v1.2.3** foi escolhido como referência vi
 
 ### 4.3 Água
 
-A estética da água de **Top Down Kingdom 2D** foi aprovada como referência complementar. A solução deverá combinar com o pacote visual principal e priorizar leveza. Uma possibilidade técnica a avaliar é usar texturas reutilizáveis com animação procedural ou shader/material leve. Essa abordagem é uma proposta, não uma decisão técnica final. Licenças deverão ser verificadas antes de incorporar assets de terceiros.
+A estética da água de **Top Down Kingdom 2D** foi aprovada como referência complementar. O pacote de água será enviado para inspeção em conversa separada. A solução deverá combinar com o pacote visual principal e priorizar leveza. Uma possibilidade técnica a avaliar é usar texturas reutilizáveis com animação procedural ou shader/material leve. Essa abordagem é uma proposta, não uma decisão técnica final. Licenças deverão ser verificadas antes de incorporar assets de terceiros.
 
 ## 5. Protagonista
 
@@ -101,12 +102,13 @@ A prioridade imediata é planejar e construir a base do jogo. Esses sistemas ser
 
 ## 8. Diretrizes técnicas iniciais
 
-- Unity será a engine.
-- C# é a linguagem planejada; versão e configuração ainda precisam ser definidas.
+- Engine aprovada: **Unity 6.3**.
+- Pipeline aprovado: **Universal Render Pipeline (URP) com Renderer 2D**.
+- C# é a linguagem planejada; versão e configuração ainda precisam ser definidas pelo editor/instalação.
 - A solução visual deverá combinar recursos em sprites/texturas com elementos procedurais quando fizer sentido.
 - Desempenho e fluidez são requisitos importantes.
 - A arquitetura técnica será definida antes da implementação.
-- O pacote principal inclui suporte e recursos voltados a URP 2D; a compatibilidade deverá ser testada antes de fixar a versão e o pipeline do projeto.
+- O pacote visual principal possui recursos e correções direcionados a URP 2D; a configuração real deverá ser validada no projeto Unity.
 
 ## 9. Ordem de desenvolvimento proposta
 
@@ -140,7 +142,6 @@ Esses tópicos dependem de planejamento e aprovação explícita.
 - Como será o protagonista original?
 - Quais serão os biomas e a estrutura das regiões?
 - Qual será a escala de tiles, sprites, personagens e câmera?
-- Qual versão da Unity e configuração de renderização serão adotadas?
 - Qual será a arquitetura para mapas manuais, procedurais e híbridos?
 - Como será implementada a água mantendo compatibilidade visual e bom desempenho?
 - Quais serão os detalhes dos sistemas de RPG e sua ordem de implementação?
@@ -149,11 +150,12 @@ Esses tópicos dependem de planejamento e aprovação explícita.
 
 ### Confirmado
 
-- RPG 2D top-down em pixel art na Unity.
+- RPG 2D top-down em pixel art na Unity 6.3.
+- Universal Render Pipeline (URP) com Renderer 2D.
 - Mundo aberto e conectado.
 - Referência visual principal: Pixel Art Top Down - Basic v1.2.3.
 - Protagonista original; personagem demonstrativo do pacote não será usado como protagonista ou personagem jogável.
-- Água inspirada visualmente em Top Down Kingdom 2D.
+- Água inspirada visualmente em Top Down Kingdom 2D; pacote será enviado para inspeção.
 - Preservação dos assets originais.
 - Utilizar os assets existentes como base visual; não gerar arte nova nem substituir assets adequados por placeholders.
 - Planejamento e organização antes de implementação.
@@ -163,15 +165,15 @@ Esses tópicos dependem de planejamento e aprovação explícita.
 - Água com textura reutilizável e animação procedural/shader leve.
 - Divisão de áreas entre construção manual, procedural controlada e híbrida conforme os critérios descritos.
 - Sequência de desenvolvimento apresentada neste documento.
-- Versão Unity e pipeline de renderização, a validar por compatibilidade.
+- Configurações internas do URP 2D, câmera, escala, pixels por unidade, sorting e colisões, pendentes de validação.
 
 ## 13. Documentos relacionados
 
 - [[Catálogo de Assets]] — inventário inicial do pacote Pixel Art Top Down - Basic v1.2.3.
 - [[Manual de Identidade Visual]] — diretrizes visuais preliminares derivadas dos recursos existentes.
 - [[Planejamento da Base Técnica]] — planejamento da base técnica e da cena de validação.
+- [[Arquitetura Técnica Inicial]] — organização preliminar do projeto Unity 6.3 com URP 2D.
 - Documento de Level Design — a desenvolver.
-- Arquitetura Técnica — a desenvolver após validação da Unity e do pipeline.
 - Documento de Sistemas de Jogo — a desenvolver.
 - Lore e Universo — a desenvolver.
 - Roadmap de Desenvolvimento — a desenvolver.
@@ -180,23 +182,26 @@ Esses tópicos dependem de planejamento e aprovação explícita.
 
 - **0.1:** consolidação inicial das informações e decisões existentes no planejamento do CODEXIA.
 - **0.2:** inclusão das regras reforçadas de uso dos assets e registro dos documentos iniciais de catálogo, identidade visual e planejamento da base técnica.
+- **0.3:** aprovação da Unity 6.3 com URP 2D; registro da preparação técnica inicial e envio posterior do pacote complementar de água.
 
 ## 15. Estado atual do trabalho
 
-### Concluído nesta etapa
+### Concluído
 
 - Inspeção somente leitura do arquivo original **Pixel Art Top Down - Basic v1.2.3.zip**.
 - Identificação dos grupos de texturas, prefabs, Tile Palettes, animações, scripts, materiais, shaders e cenas demonstrativas.
 - Criação do [[Catálogo de Assets]].
 - Criação do [[Manual de Identidade Visual]] preliminar.
 - Criação do [[Planejamento da Base Técnica]].
+- Aprovação da Unity 6.3 com URP 2D.
 
-### Pendente
+### Próximas atividades
 
-- Inspeção dos prefabs e cenas dentro do editor Unity.
-- Confirmação da versão Unity e do pipeline.
-- Localização e inspeção do pacote complementar Top Down Kingdom 2D.
-- Validação de escala, pixels por unidade, pivôs, sorting, colisores e câmera.
-- Montagem da cena-base dentro do projeto Unity após as definições técnicas.
+- Preparar o projeto Unity 6.3 usando o template 2D (URP).
+- Importar o pacote principal preservando os arquivos e metadados originais.
+- Inspecionar as cenas demonstrativas, prefabs e configurações no editor.
+- Validar escala, pixels por unidade, pivôs, sorting, colisores e câmera.
+- Inspecionar o pacote complementar de água quando enviado.
+- Planejar e montar a cena-base após a validação dos assets.
 
-A inspeção do ZIP não significa que os assets foram importados para Unity nem que a cena-base foi implementada.
+A documentação e o planejamento foram atualizados; isso não significa que o projeto Unity já foi criado ou que os assets foram importados.
