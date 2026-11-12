@@ -2,8 +2,8 @@
 tipo: documento
 categoria: game-design
 projeto: CODEXIA
-status: inicial
-versao: 0.1
+status: em-andamento
+versao: 0.2
 idioma: pt-BR
 tags:
   - codexia
@@ -60,6 +60,7 @@ O pacote **Pixel Art Top Down - Basic v1.2.3** foi escolhido como referência vi
 - Não substituir assets adequados por formas provisórias.
 - Analisar os recursos existentes antes de decidir por novos recursos.
 - Qualquer adaptação futura deverá preservar os arquivos-fonte.
+- A orientação do projeto é utilizar os assets existentes como base visual, sem gerar arte nova e sem recorrer a placeholders quando houver recurso adequado.
 
 ### 4.3 Água
 
@@ -105,6 +106,7 @@ A prioridade imediata é planejar e construir a base do jogo. Esses sistemas ser
 - A solução visual deverá combinar recursos em sprites/texturas com elementos procedurais quando fizer sentido.
 - Desempenho e fluidez são requisitos importantes.
 - A arquitetura técnica será definida antes da implementação.
+- O pacote principal inclui suporte e recursos voltados a URP 2D; a compatibilidade deverá ser testada antes de fixar a versão e o pipeline do projeto.
 
 ## 9. Ordem de desenvolvimento proposta
 
@@ -119,12 +121,12 @@ A prioridade imediata é planejar e construir a base do jogo. Esses sistemas ser
 9. Testar desempenho e consistência.
 10. Evoluir gradualmente os sistemas de RPG.
 
-Esta ordem é um plano de trabalho, não uma declaração de tarefas já executadas.
+Esta ordem é um plano de trabalho, não uma declaração de tarefas já executadas. O catálogo inicial e os documentos preliminares relacionados foram criados; a validação dentro do editor Unity ainda está pendente.
 
 ## 10. Fora do escopo imediato
 
 - Criar ou implementar o protagonista.
-- Escrever scripts ou implementar sistemas de jogo.
+- Escrever scripts próprios ou implementar sistemas de jogo.
 - Criar arte nova.
 - Definir a lore completa.
 - Fechar a lista de biomas e regiões.
@@ -146,31 +148,55 @@ Esses tópicos dependem de planejamento e aprovação explícita.
 ## 12. Estado das decisões
 
 ### Confirmado
+
 - RPG 2D top-down em pixel art na Unity.
 - Mundo aberto e conectado.
 - Referência visual principal: Pixel Art Top Down - Basic v1.2.3.
 - Protagonista original; personagem demonstrativo do pacote não será usado como protagonista ou personagem jogável.
 - Água inspirada visualmente em Top Down Kingdom 2D.
 - Preservação dos assets originais.
+- Utilizar os assets existentes como base visual; não gerar arte nova nem substituir assets adequados por placeholders.
 - Planejamento e organização antes de implementação.
 
 ### Propostas ainda não definitivas
+
 - Água com textura reutilizável e animação procedural/shader leve.
 - Divisão de áreas entre construção manual, procedural controlada e híbrida conforme os critérios descritos.
 - Sequência de desenvolvimento apresentada neste documento.
+- Versão Unity e pipeline de renderização, a validar por compatibilidade.
 
-## 13. Documentos relacionados planejados
+## 13. Documentos relacionados
 
-Estes documentos ainda não foram criados; serão adicionados conforme o projeto amadurecer:
-
-- Manual de Identidade Visual
-- Catálogo de Assets
-- Documento de Level Design
-- Arquitetura Técnica
-- Documento de Sistemas de Jogo
-- Lore e Universo
-- Roadmap de Desenvolvimento
+- [[Catálogo de Assets]] — inventário inicial do pacote Pixel Art Top Down - Basic v1.2.3.
+- [[Manual de Identidade Visual]] — diretrizes visuais preliminares derivadas dos recursos existentes.
+- [[Planejamento da Base Técnica]] — planejamento da base técnica e da cena de validação.
+- Documento de Level Design — a desenvolver.
+- Arquitetura Técnica — a desenvolver após validação da Unity e do pipeline.
+- Documento de Sistemas de Jogo — a desenvolver.
+- Lore e Universo — a desenvolver.
+- Roadmap de Desenvolvimento — a desenvolver.
 
 ## 14. Histórico
 
 - **0.1:** consolidação inicial das informações e decisões existentes no planejamento do CODEXIA.
+- **0.2:** inclusão das regras reforçadas de uso dos assets e registro dos documentos iniciais de catálogo, identidade visual e planejamento da base técnica.
+
+## 15. Estado atual do trabalho
+
+### Concluído nesta etapa
+
+- Inspeção somente leitura do arquivo original **Pixel Art Top Down - Basic v1.2.3.zip**.
+- Identificação dos grupos de texturas, prefabs, Tile Palettes, animações, scripts, materiais, shaders e cenas demonstrativas.
+- Criação do [[Catálogo de Assets]].
+- Criação do [[Manual de Identidade Visual]] preliminar.
+- Criação do [[Planejamento da Base Técnica]].
+
+### Pendente
+
+- Inspeção dos prefabs e cenas dentro do editor Unity.
+- Confirmação da versão Unity e do pipeline.
+- Localização e inspeção do pacote complementar Top Down Kingdom 2D.
+- Validação de escala, pixels por unidade, pivôs, sorting, colisores e câmera.
+- Montagem da cena-base dentro do projeto Unity após as definições técnicas.
+
+A inspeção do ZIP não significa que os assets foram importados para Unity nem que a cena-base foi implementada.
