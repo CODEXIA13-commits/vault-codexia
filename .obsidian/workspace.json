@@ -4,17 +4,21 @@
     "type": "split",
     "children": [
       {
-        "id": "1c337fe8c57b84c6",
+        "id": "c31e40f63eb9c2a6",
         "type": "tabs",
         "children": [
           {
-            "id": "92b56e3af85f3792",
+            "id": "e6af125c467241ba",
             "type": "leaf",
             "state": {
-              "type": "empty",
-              "state": {},
+              "type": "markdown",
+              "state": {
+                "file": "CODEXIA - GDD.md",
+                "mode": "source",
+                "source": false
+              },
               "icon": "lucide-file",
-              "title": "Nova aba"
+              "title": "CODEXIA - GDD"
             }
           }
         ]
@@ -192,8 +196,9 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "185b8236e2be7110",
+  "active": "e6af125c467241ba",
   "lastOpenFiles": [
+    "CODEXIA - GDD.md",
     "4444.md",
     "oiu.md",
     "00_Parametros_Principais_System.md.md",
