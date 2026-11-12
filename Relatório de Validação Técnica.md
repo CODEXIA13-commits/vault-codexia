@@ -3,7 +3,7 @@ tipo: documento
 categoria: validacao-tecnica
 projeto: CODEXIA
 status: em-andamento
-versao: 0.1
+versao: 0.2
 idioma: pt-BR
 tags:
   - codexia
@@ -143,12 +143,50 @@ O único material de água recebido nesta etapa é `TX waterreference.jpg`, uma 
 
 ## 9. Decisões pendentes (aguardando aprovação)
 
-1. Como resolver as Sorting Layers e camadas de física do pacote.
-2. Aplicar ou não o patch URP 2D Lit para Unity 6.3.
+1. ~~Como resolver as Sorting Layers e camadas de física do pacote.~~ **Resolvido** (seção 11.1).
+2. Aplicar ou não o patch URP 2D Lit para Unity 6.3. **Não aplicado; continua pendente.**
 3. Compressão de texturas e uso de Pixel Perfect Camera (após teste visual).
-4. Conteúdo do primeiro executável de teste.
-5. Destino do ZIP de assets que está dentro do cofre (sincronizado com o GitHub).
+4. ~~Conteúdo do primeiro executável de teste.~~ **Gerado** (seção 11.3).
+5. Destino do ZIP de assets que está dentro do cofre (sincronizado com o GitHub). Aprovado retirá-lo; ver seção 11.5.
+6. **Novo:** confirmar a ordenação por profundidade adotada no Renderer 2D (seção 11.2).
+7. **Novo:** escala de câmera definitiva (o executável usa valor provisório; seção 11.3).
 
-## 10. Histórico
+## 11. Etapa 2 — camadas, área inicial e executável (12/11/2026)
+
+### 11.1 Camadas (aprovado)
+- Importado do pacote **somente** `ProjectSettings/TagManager.asset`. Os outros 17 arquivos continuaram desmarcados.
+- Conferido byte a byte: idêntico ao do pacote. Sorting Layers Default, Layer 1, 2 e 3, e camadas de física Layer 1, 2 e 3 (índices 20–22).
+- O pacote também traz o preset oficial `Preset/Tags & Layers - Pixel Art Top Down - Basic.preset`, o que confirma que o autor espera essas camadas.
+
+### 11.2 Ordenação por profundidade (aplicada, aguardando confirmação)
+- Os assets dependem de **Transparency Sort Mode = Custom Axis (0, 1, 1)**, valor usado no projeto de origem. Isso desenha na frente o que está mais abaixo na tela e usa o eixo Z para empurrar as sombras para trás.
+- No CODEXIA o valor era Default. Foi alterado em `Assets/Settings/Renderer2D.asset` (arquivo próprio do CODEXIA, não do pacote). São só duas linhas, e a mudança é reversível.
+- Antes: `m_TransparencySortMode: 0`, `m_TransparencySortAxis: {x: 0, y: 1, z: 0}`. Depois: `3` e `{x: 0, y: 1, z: 1}`.
+
+### 11.3 Cena de validação "Área Inicial"
+- Arquivo: `Assets/CODEXIA/Scenes/Validation/Validacao - Area Inicial.unity` (primeira pasta própria do CODEXIA, criada por ter conteúdo real).
+- Construída **somente** com tiles e prefabs originais do pacote. Nenhum asset foi modificado, recolorido ou criado, e nenhum script próprio foi escrito.
+- Estrutura: `AREA INICIAL` → `Grid` → Tilemap `Layer 1 - Chao` (1.296 tiles, Sorting Layer 1, material MT Tileset, modo Chunk), e `Objetos` com 227 instâncias de prefabs.
+- Composição manual: estrada leste–oeste calçada; praça com poço, lanternas de pedra e bancos; caminho ao norte até um santuário (estátua e pilares); placas de direção; depósito com caixas, barris, potes e baú; pedras a oeste; floresta nas bordas.
+- Composição procedural controlada (semente fixa 1312): 34 arbustos e 110 tufos de grama/flor, com distância mínima entre objetos e sem invadir o calçamento; variações de grama e flores no chão (5% de flores).
+- Regras de coerência verificadas: nada dentro do calçamento; os colisores dos props dinâmicos (caixas, barris, potes) não se sobrepõem (0 conflitos), para a física não empurrá-los ao iniciar.
+- O calçamento usa as bordas e cantos do próprio tileset de grama. Nos cantos internos foram usados apenas os tiles existentes (`Grass_60` e `Grass_61`), sem espelhar tiles.
+- Câmera **provisória**: ortográfica, tamanho 8,4375, posição (0; 0,6). Em 1920×1080 isso dá escala inteira de 2× (30×16,9 unidades visíveis). Não é decisão de design.
+- Testes no editor: a cena abriu sem erros; Game View conferido; Play Mode com **0 erros e 0 avisos** e nenhum prop deslocado.
+
+### 11.4 Executável de teste
+- Build Windows (64 bits) concluído com resultado **Succeeded** em 75 s.
+- Pasta: `V:\Programação\CODEXIA Unity\Builds\Teste 01 - Area Inicial\` → `CODEXIA.exe`, com LEIA-ME de uso.
+- Lista de cenas do build: somente a cena de validação (a SampleScene ficou desativada, não removida).
+- O Script Updater foi recusado de novo durante o build (script original preservado).
+- **Não testado por mim:** a execução do `.exe` fora do editor. O teste final fica com o usuário. O jogo abre em tela cheia e fecha com Alt+F4.
+
+### 11.5 ZIP no cofre
+- Criado `.gitignore` no cofre para impedir que o ZIP volte a ser sincronizado.
+- O ZIP **já foi enviado ao GitHub** (commit de 12/11/2026 09:12) e continua no histórico do repositório. Retirá-lo do histórico exige uma limpeza à parte.
+- A remoção do arquivo do cofre depende do usuário (a ferramenta usada não apaga arquivos). O backup verificado está em `V:\Programação\CODEXIA Backups\`.
+
+## 10. Histórico (do documento)
 
 - **0.1:** primeiro registro da preparação do ambiente, importação e validação técnica inicial.
+- **0.2:** camadas do pacote importadas; ordenação por profundidade ajustada; cena "Área Inicial" e primeiro executável de teste.

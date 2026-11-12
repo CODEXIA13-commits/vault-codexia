@@ -3,7 +3,7 @@ tipo: documento
 categoria: game-design
 projeto: CODEXIA
 status: em-andamento
-versao: 0.4
+versao: 0.5
 idioma: pt-BR
 tags:
   - codexia
@@ -158,6 +158,8 @@ Esses tópicos dependem de planejamento e aprovação explícita.
 - Água inspirada visualmente em Top Down Kingdom 2D; pacote será enviado para inspeção.
 - Versão instalada da engine: Unity 6.3 LTS **6000.3.28f1**, com Visual Studio Community 2026 como editor de C#. A Unity 6.6 já instalada no computador não é usada no CODEXIA.
 - Projeto Unity em `V:\Programação\CODEXIA Unity\CODEXIA`, fora do cofre do Obsidian, criado pelo template Universal 2D (URP com Renderer 2D).
+- Sorting Layers e camadas de física do pacote adotadas no CODEXIA (Default, Layer 1, Layer 2, Layer 3), importadas do `TagManager.asset` original.
+- Diretrizes de arquitetura e padrões C# registradas em [[Diretrizes de Arquitetura e Padrões C#]] (a divisão Core/Shared/UI continua como proposta, sem implementação).
 - Preservação dos assets originais.
 - Utilizar os assets existentes como base visual; não gerar arte nova nem substituir assets adequados por placeholders.
 - Planejamento e organização antes de implementação.
@@ -168,6 +170,8 @@ Esses tópicos dependem de planejamento e aprovação explícita.
 - Divisão de áreas entre construção manual, procedural controlada e híbrida conforme os critérios descritos.
 - Sequência de desenvolvimento apresentada neste documento.
 - Configurações internas do URP 2D, câmera, escala, pixels por unidade, sorting e colisões, pendentes de validação.
+- Ordenação por profundidade do Renderer 2D em Custom Axis (0, 1, 1), igual à do pacote. Já aplicada para que os assets apareçam como o autor projetou; aguarda confirmação.
+- Câmera do executável de teste (ortográfica, tamanho 8,4375, escala 2× em 1080p). Valor provisório, não é a escala definitiva.
 
 ## 13. Documentos relacionados
 
@@ -176,6 +180,7 @@ Esses tópicos dependem de planejamento e aprovação explícita.
 - [[Planejamento da Base Técnica]] — planejamento da base técnica e da cena de validação.
 - [[Arquitetura Técnica Inicial]] — organização preliminar do projeto Unity 6.3 com URP 2D.
 - [[Relatório de Validação Técnica]] — instalação, importação e dados técnicos verificados no editor.
+- [[Diretrizes de Arquitetura e Padrões C#]] — padrões para o código futuro (ainda sem implementação).
 - Documento de Level Design — a desenvolver.
 - Documento de Sistemas de Jogo — a desenvolver.
 - Lore e Universo — a desenvolver.
@@ -187,6 +192,7 @@ Esses tópicos dependem de planejamento e aprovação explícita.
 - **0.2:** inclusão das regras reforçadas de uso dos assets e registro dos documentos iniciais de catálogo, identidade visual e planejamento da base técnica.
 - **0.3:** aprovação da Unity 6.3 com URP 2D; registro da preparação técnica inicial e envio posterior do pacote complementar de água.
 - **0.4:** Unity 6.3 LTS (6000.3.28f1) instalada; projeto CODEXIA criado com o template Universal 2D; pacote principal importado sem ProjectSettings; criação do [[Relatório de Validação Técnica]].
+- **0.5:** adoção das camadas do pacote; registro das diretrizes de C#; criação da cena de validação "Área Inicial" e do primeiro executável de teste.
 
 ## 15. Estado atual do trabalho
 
@@ -203,13 +209,19 @@ Esses tópicos dependem de planejamento e aprovação explícita.
 - Cópia de segurança do ZIP original, conferida por SHA-256, em `V:\Programação\CODEXIA Backups\`.
 - Importação do pacote principal sem os 18 arquivos de ProjectSettings do projeto de origem; 0 erros e 1 aviso no Console; arquivos conferidos byte a byte contra o original.
 - Inspeção da cena SC Demo (sem salvar) e levantamento de PPU, pivôs, sorting, colisores, câmera e shaders. Detalhes no [[Relatório de Validação Técnica]].
+- Importação apenas do `TagManager.asset` do pacote (camadas), conferido byte a byte.
+- Cena de validação `Validacao - Area Inicial` montada só com tiles e prefabs originais; Play Mode com 0 erros e 0 avisos.
+- Primeiro executável de teste para Windows (`Builds\Teste 01 - Area Inicial\CODEXIA.exe`), com build bem-sucedido.
 
 ### Próximas atividades
 
-- Decidir como tratar as Sorting Layers e camadas de física das quais o pacote depende (Layer 1, 2 e 3).
+- Testar o executável no computador do usuário e registrar o resultado.
+- Confirmar a ordenação por profundidade (Custom Axis 0, 1, 1).
 - Decidir sobre o patch URP 2D Lit para Unity 6.3 incluído no pacote.
-- Inspecionar a cena SC All Props e validar a ordenação no Game View.
+- Definir escala de câmera, resolução-alvo e uso de Pixel Perfect Camera.
+- Inspecionar a cena SC All Props.
+- Retirar o ZIP de assets do cofre (aprovado; precisa ser feito pelo usuário).
 - Inspecionar o pacote complementar de água quando enviado. Até agora só foi recebida uma imagem de referência (`TX waterreference.jpg`).
-- Planejar e montar a cena-base após essas decisões.
+- Planejar o protagonista original e a arquitetura de código (Core/Shared/UI) para aprovação, antes de qualquer script.
 
-O protagonista, os scripts próprios e a cena de validação ainda não foram criados.
+O protagonista e os scripts próprios ainda não foram criados. O executável atual é uma vista estática da área inicial (câmera fixa, sem personagem).

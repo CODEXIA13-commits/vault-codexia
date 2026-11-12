@@ -3,7 +3,7 @@ tipo: documento
 categoria: game-design
 projeto: CODEXIA
 status: catalogo-inicial
-versao: 0.2
+versao: 0.3
 idioma: pt-BR
 tags:
   - codexia
@@ -140,6 +140,10 @@ O GDD cita **Top Down Kingdom 2D** como referência complementar para a água. E
 - **Dependência de configurações:** os prefabs e cenas usam as Sorting Layers Layer 1, 2 e 3 e as camadas de física Layer 1, 2 e 3 (índices 20–22), definidas no `TagManager.asset` do projeto de origem.
 - **PPU 32** em todas as texturas; pivô central nos tiles e na base em objetos e vegetação.
 - **ZIP atual diferente do catalogado:** 3.447.959 bytes (antes 2.622.004). Foi incluído `Texture/TX waterreference.jpg` (imagem de referência de água, 1077×1065). O `.unitypackage` interno não mudou.
+- **Preset de camadas:** `Preset/Tags & Layers - Pixel Art Top Down - Basic.preset`.
+- **Ordenação por profundidade esperada pelo pacote:** Transparency Sort Mode Custom Axis (0, 1, 1). O eixo Z empurra as sombras para trás.
+- **Props dinâmicos:** Crate 01/02, Barrel 01, Pot 01–03, Stone Cube 01 e PF Player têm Rigidbody2D dinâmico com gravidade 0 e rotação travada. Podem ser empurrados, e não devem ser posicionados com colisores sobrepostos.
+- **Raiz dos prefabs:** alguns prefabs (ex.: Crate 01) guardam uma posição na raiz que a Unity substitui ao instanciar. Não interfere no uso.
 - Detalhes no [[Relatório de Validação Técnica]].
 
 ## 10. Próximas verificações
@@ -153,4 +157,5 @@ O GDD cita **Top Down Kingdom 2D** como referência complementar para a água. E
 ## 11. Histórico
 
 - **0.1:** inventário inicial realizado a partir do ZIP original, em modo somente leitura.
+- **0.3:** preset de camadas, ordenação por profundidade e props dinâmicos.
 - **0.2:** registro dos achados da importação no Unity 6.3: patches URP 2D Lit, dependência de Sorting Layers e camadas, PPU e divergência do ZIP.

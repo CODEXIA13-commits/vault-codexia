@@ -3,7 +3,7 @@ tipo: documento
 categoria: planejamento-tecnico
 projeto: CODEXIA
 status: planejamento-inicial
-versao: 0.3
+versao: 0.4
 idioma: pt-BR
 tags:
   - codexia
@@ -82,8 +82,11 @@ O protagonista não será incluído nesta primeira base. O prefab demonstrativo 
 | 5. Importação | ✅ Sem ProjectSettings; 0 erros e 1 aviso |
 | 6. URP 2D Renderer e shaders | ✅ Renderer 2D ativo; materiais renderizam sem erro. ⏳ Luzes 2D não testadas |
 | 7. Cenas demonstrativas | ✅ SC Demo inspecionada sem salvar. ⏳ SC All Props pendente |
-| 8. Propriedades técnicas | ✅ Levantadas. ⏳ Sorting depende de decisão |
-| 9–12. Cena própria, composição, testes e registro final | ⏳ Pendentes |
+| 8. Propriedades técnicas | ✅ Levantadas; camadas do pacote importadas (TagManager) |
+| 9. Cena própria | ✅ `Assets/CODEXIA/Scenes/Validation/Validacao - Area Inicial.unity` |
+| 10. Composição com assets existentes | ✅ Manual + procedural controlada, só com tiles e prefabs originais |
+| 11. Testes | ✅ Editor e Play Mode sem erros; build Windows Succeeded. ⏳ Executável a testar pelo usuário; desempenho não medido |
+| 12. Registro | ✅ GDD v0.5 e Relatório v0.2 |
 
 Detalhes no [[Relatório de Validação Técnica]].
 
@@ -129,4 +132,5 @@ Detalhes no [[Relatório de Validação Técnica]].
 
 - **0.1:** planejamento inicial da base técnica e da cena de validação, sem implementação.
 - **0.2:** Unity 6.3 com URP 2D aprovada; sequência de preparação atualizada.
+- **0.4:** passos 9 a 12 executados; primeiro executável de teste.
 - **0.3:** passos 1 a 8 executados e verificados; dependência de Sorting Layers registrada.

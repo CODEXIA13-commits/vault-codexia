@@ -3,7 +3,7 @@ tipo: documento
 categoria: arquitetura-tecnica
 projeto: CODEXIA
 status: proposta-inicial
-versao: 0.2
+versao: 0.3
 idioma: pt-BR
 tags:
   - codexia
@@ -31,7 +31,11 @@ tags:
 - URP 17.3.0; `UniversalRP.asset` em todos os níveis de qualidade; renderer padrão `Renderer2D.asset`.
 - Espaço de cor Linear; entrada pelo novo Input System (1.20.1), apenas.
 - Pacote principal importado em `Assets/Cainos/Pixel Art Top Down - Basic/`, sem ProjectSettings de origem.
-- A pasta `Assets/CODEXIA/` ainda não foi criada; seguirá a regra de só criar pastas quando houver conteúdo.
+- Pasta própria criada com conteúdo real: `Assets/CODEXIA/Scenes/Validation/` (cena "Validacao - Area Inicial"). Nenhuma pasta de código foi criada.
+- Camadas: Sorting Layers e camadas de física do pacote (Layer 1–3) importadas do `TagManager.asset` original.
+- Renderer 2D: Transparency Sort Mode Custom Axis (0, 1, 1), igual ao do pacote; aguarda confirmação.
+- Builds: `V:\Programação\CODEXIA Unity\Builds\`, fora da pasta do projeto.
+- Padrões de código futuro: [[Diretrizes de Arquitetura e Padrões C#]].
 
 ## 2. Princípios
 
@@ -119,4 +123,5 @@ A seleção final de assets da cena de validação deverá ser feita com base no
 ## 10. Histórico
 
 - **0.1:** proposta inicial de arquitetura para Unity 6.3 com URP 2D.
+- **0.3:** pasta de cenas própria, camadas, ordenação e diretrizes de C#.
 - **0.2:** registro do ambiente verificado após a criação do projeto e a importação do pacote.

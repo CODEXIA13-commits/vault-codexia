@@ -1,0 +1,4 @@
+# Pacotes de assets de terceiros nao devem ser sincronizados com o GitHub (licenca).
+# Backup verificado em V:\Programacao\CODEXIA Backups\
+*.zip
+*.unitypackage
