@@ -3,7 +3,7 @@ tipo: documento
 categoria: arquitetura-tecnica
 projeto: CODEXIA
 status: proposta-inicial
-versao: 0.3
+versao: 0.4
 idioma: pt-BR
 tags:
   - codexia
@@ -35,7 +35,8 @@ tags:
 - Camadas: Sorting Layers e camadas de física do pacote (Layer 1–3) importadas do `TagManager.asset` original.
 - Renderer 2D: Transparency Sort Mode Custom Axis (0, 1, 1), igual ao do pacote; aguarda confirmação.
 - Builds: `V:\Programação\CODEXIA Unity\Builds\`, fora da pasta do projeto.
-- Padrões de código futuro: [[Diretrizes de Arquitetura e Padrões C#]].
+- Padrões de código: [[Diretrizes de Arquitetura e Padrões C#]].
+- **Código implementado** (versão jogável): `Assets/CODEXIA/Scripts/Core` (Codexia.Core), `Scripts/Shared` (Codexia.Shared), `Scripts/UI` (Codexia.UI); dados em `Assets/CODEXIA/Data/Items` e `Data/Config`. Detalhes em [[Arquitetura de Código - Versão Jogável]].
 
 ## 2. Princípios
 
@@ -123,5 +124,6 @@ A seleção final de assets da cena de validação deverá ser feita com base no
 ## 10. Histórico
 
 - **0.1:** proposta inicial de arquitetura para Unity 6.3 com URP 2D.
+- **0.4:** código Core/Shared/UI e dados ScriptableObject da versão jogável.
 - **0.3:** pasta de cenas própria, camadas, ordenação e diretrizes de C#.
 - **0.2:** registro do ambiente verificado após a criação do projeto e a importação do pacote.

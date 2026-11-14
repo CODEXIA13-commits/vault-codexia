@@ -3,7 +3,7 @@ tipo: documento
 categoria: game-design
 projeto: CODEXIA
 status: em-andamento
-versao: 0.5
+versao: 0.10
 idioma: pt-BR
 tags:
   - codexia
@@ -18,14 +18,14 @@ tags:
 
 ## 1. Visão geral
 
-CODEXIA é um RPG 2D em pixel art, com câmera top-down e mundo aberto conectado. A experiência deverá combinar exploração, progressão de personagem, combate, missões e descoberta de regiões distintas. A prioridade atual é definir uma base sólida de projeto antes de implementar sistemas avançados.
+CODEXIA é um **RPG simulador** 2D em pixel art, com câmera top-down e mundo aberto conectado. A experiência combina a vida de sobrevivência no campo (**pesca, plantio, coleta e caça**) com aventura: **questlines**, exploração, progressão de personagem, combate e descoberta de regiões distintas. O jogo começa numa **vila próxima a uma cachoeira** (ver 5.1 e 6.3). A prioridade atual é definir uma base sólida de projeto antes de implementar sistemas avançados.
 
 ## 2. Ficha do projeto
 
 | Campo | Definição atual |
 |---|---|
 | Nome | CODEXIA |
-| Gênero | RPG |
+| Gênero | RPG simulador (vida no campo + aventura) |
 | Engine | Unity 6.3 LTS (6000.3.28f1) |
 | Renderização | Universal Render Pipeline (URP), com Renderer 2D |
 | Dimensão | 2D |
@@ -37,8 +37,8 @@ CODEXIA é um RPG 2D em pixel art, com câmera top-down e mundo aberto conectado
 | Renderização visual | Procedural / híbrida com sprites e texturas |
 | Mundo | Aberto e conectado |
 | Construção dos mapas | Manual, procedural controlada e híbrida |
-| Lore | A definir |
-| Protagonista | Original, ainda a desenvolver |
+| Lore | Definida pelo usuário em 12/11/2026 (ver 5.1) |
+| Protagonista | Uma jovem caçadora cujo nome não é revelado; visual original ainda a desenhar |
 
 ## 3. Pilares de experiência
 
@@ -73,6 +73,27 @@ O protagonista será um personagem original, ainda não desenhado nem implementa
 
 O personagem demonstrativo incluído no pacote de assets não deverá ser usado como personagem jogável, protagonista ou base direta do protagonista. Seus exemplos podem ser estudados somente como referência geral de movimento: animações nas quatro direções, idle, transições, ritmo e proporções dos quadros.
 
+### 5.1 Lore (definida pelo usuário em 12/11/2026)
+
+**✅ Decisão aprovada.** Texto do usuário, organizado:
+
+- **Infância:** a protagonista, uma menina cujo nome não é revelado, perdeu os pais numa **enchente** quando ainda era criança.
+- **Tio Hank:** ela foi criada pelo tio, um homem reservado e sem muitos amigos na vizinhança. Todo dia ele vai à floresta caçar alimentos. Com ele, ela aprendeu a sobreviver: **plantar, colher, caçar e se defender**.
+- **O incidente:** num dia como qualquer outro, ao saírem para caçar, ela se perde de Hank. Na neblina, vê um vulto e, como boa caçadora, segue-o furtivamente até uma **clareira com um rio**. Quando está prestes a atirar no "animal", **um elfo negro** a ataca; ela tenta fugir, mas aquilo parece uma emboscada feita por ele.
+- **O despertar:** quando o elfo chega perto para atacá-la, **uma energia emana do corpo amedrontado dela** e faz o elfo fugir, pensativo, como se soubesse de algo.
+- **Depois:** ela acorda em casa, com o tio preparando a carne e os legumes que havia pego mais cedo.
+- **Início do jogo:** **sete anos depois**, o jogo começa com ela em frente à **ponte sobre a cachoeira**, que fica acima da **vila**, logo à frente.
+
+**Personagens citados:** a protagonista (sem nome), Tio Hank e o elfo negro.
+
+**✅ Aprovado pelo usuário (12/11/2026), para trabalhar bem mais à frente:**
+- A energia dela é a origem dos poderes e elementos previstos na seção 7.
+- O mistério do elfo negro é a questline principal.
+
+**💡 Ainda em aberto:** o incidente da infância como prólogo jogável.
+
+**Início do jogo (atualizado em 12/11/2026):** o jogo começa com ela **em frente à casa** (do Tio Hank), na Vila da Cachoeira. Ao passar pela **ponte da cachoeira**, o jogo carrega a próxima área.
+
 ## 6. Mundo e Level Design
 
 O mundo será aberto e conectado, composto por regiões e áreas especiais, como biomas, cavernas e dungeons. A lista definitiva de regiões, a lore e a organização narrativa ainda serão definidas.
@@ -83,13 +104,23 @@ O mundo será aberto e conectado, composto por regiões e áreas especiais, como
 - **Procedural controlada:** distribuição de vegetação, pedras, pequenas decorações, variações de terreno e partes de regiões naturais.
 - **Híbrida:** florestas, campos, cavernas e outras áreas naturais que precisam de identidade própria e variedade.
 
+### 6.4 Mundo em zonas, como no Stardew Valley
+
+**✅ Decisão do usuário (12/11/2026):** o mundo é dividido em zonas (áreas). A câmera segue a personagem e para na borda da zona. Ao passar por uma passagem (borda do mapa, ponte e, no futuro, portas), a tela escurece e a próxima zona é carregada. Detalhes no [[CODEXIA - Level Design]] (seção 10).
+
 ### 6.2 Regras de coerência
 
 A geração e composição dos mapas deverão respeitar regras para evitar, por exemplo, árvores dentro de construções, objetos bloqueando caminhos indevidamente e elementos incompatíveis com o ambiente.
 
+### 6.3 Ponto de partida: vila junto à cachoeira
+
+**✅ Decisão aprovada (12/11/2026):** o jogo começa numa vila próxima a uma cachoeira, como na imagem de referência enviada pelo usuário (vila de madeira ao pé de um paredão, cachoeira caindo num lago, ponte de pedra em arco sobre o rio, trilhas de terra, cercas, hortas e lampiões). A cena inicial mostra a protagonista **em frente à ponte sobre a cachoeira**, com a vila logo à frente. A referência serve de **inspiração**: a arte segue o pacote e a regra de arte nova (4.2). A proposta de layout está no [[CODEXIA - Level Design]] (seção 10).
+
 ## 7. Sistemas de jogo — visão futura
 
-Estão no horizonte do projeto, mas ainda não foram especificados nem aprovados para implementação:
+**✅ Confirmado pelo usuário (12/11/2026):** o jogo terá **pesca, plantio, coleta, caça e questlines**, entre outras mecânicas de simulação. Os detalhes de cada uma ainda serão especificados.
+
+Também estão no horizonte, mas ainda não foram especificados nem aprovados para implementação:
 
 - Progressão por níveis e atributos.
 - Classes e poderes.
@@ -138,8 +169,8 @@ Esses tópicos dependem de planejamento e aprovação explícita.
 
 ## 11. Questões em aberto
 
-- Qual será a lore, o universo e o tom narrativo?
-- Como será o protagonista original?
+- ~~Qual será a lore?~~ Definida (5.1). Ainda em aberto: nome do mundo e da vila, tom narrativo, quem são os elfos negros e o que é a energia da protagonista.
+- Como será o visual da protagonista (jovem caçadora) e do Tio Hank?
 - Quais serão os biomas e a estrutura das regiões?
 - Qual será a escala de tiles, sprites, personagens e câmera?
 - Qual será a arquitetura para mapas manuais, procedurais e híbridos?
@@ -153,6 +184,11 @@ Esses tópicos dependem de planejamento e aprovação explícita.
 - RPG 2D top-down em pixel art na Unity 6.3.
 - Universal Render Pipeline (URP) com Renderer 2D.
 - Mundo aberto e conectado.
+- **Formato do mundo: continente contínuo** com regiões conectadas por terra e fronteiras naturais (aprovado em 12/11/2026). Planejamento em três níveis (Mundo → Região → Área) no [[CODEXIA - Level Design]].
+- **Arte nova (aprovado em 12/11/2026):** permitida apenas para o que **não existe** no pacote (água, terra, areia, selva, cogumelos, tamanhos de pedra etc.), redesenhada no grid de 32 px a partir das folhas de referência enviadas pelo usuário. Continua proibido recriar, recolorir ou substituir o que o pacote já tem.
+- **Gênero e lore (12/11/2026):** RPG simulador com pesca, plantio, coleta, caça e questlines; lore da caçadora criada pelo Tio Hank (5.1); início na vila junto à cachoeira (6.3).
+- **Versão da Unity:** em 12/11/2026 o projeto foi aberto por engano na Unity 6.6, que converteu pacotes e configurações. Com aprovação do usuário, tudo voltou para a 6.3 (backup em `CODEXIA Backups\projeto-6.6-antes-de-voltar-6.3\`). Regra: abrir sempre pelo Unity Hub, conferindo **6000.3.28f1**, e recusar a atualização para a 6.6.
+- Prioridade atual: **construção do mundo** (distribuição procedural inteligente, mundo conectado e identidade dos ambientes), sem refazer os sistemas de jogo já testados.
 - Referência visual principal: Pixel Art Top Down - Basic v1.2.3.
 - Protagonista original; personagem demonstrativo do pacote não será usado como protagonista ou personagem jogável.
 - Água inspirada visualmente em Top Down Kingdom 2D; pacote será enviado para inspeção.
@@ -161,7 +197,7 @@ Esses tópicos dependem de planejamento e aprovação explícita.
 - Sorting Layers e camadas de física do pacote adotadas no CODEXIA (Default, Layer 1, Layer 2, Layer 3), importadas do `TagManager.asset` original.
 - Diretrizes de arquitetura e padrões C# registradas em [[Diretrizes de Arquitetura e Padrões C#]] (a divisão Core/Shared/UI continua como proposta, sem implementação).
 - Preservação dos assets originais.
-- Utilizar os assets existentes como base visual; não gerar arte nova nem substituir assets adequados por placeholders.
+- Utilizar os assets existentes como base visual e não substituir assets adequados por placeholders. (A proibição de arte nova foi substituída em 12/11/2026 pela regra de arte nova acima.)
 - Planejamento e organização antes de implementação.
 
 ### Propostas ainda não definitivas
@@ -180,7 +216,10 @@ Esses tópicos dependem de planejamento e aprovação explícita.
 - [[Planejamento da Base Técnica]] — planejamento da base técnica e da cena de validação.
 - [[Arquitetura Técnica Inicial]] — organização preliminar do projeto Unity 6.3 com URP 2D.
 - [[Relatório de Validação Técnica]] — instalação, importação e dados técnicos verificados no editor.
-- [[Diretrizes de Arquitetura e Padrões C#]] — padrões para o código futuro (ainda sem implementação).
+- [[Diretrizes de Arquitetura e Padrões C#]] — padrões de código.
+- [[Arquitetura de Código - Versão Jogável]] — assemblies, classes, eventos e integração da versão jogável (em revisão).
+- [[CODEXIA - Level Design]] — estrutura do mundo, regiões, conexões, identidade dos ambientes e regras procedurais (em construção).
+- [[Mecânicas da Versão Jogável]] — referências e parâmetros de movimento, vida, inventário, HUD e diálogo (proposta adotada).
 - Documento de Level Design — a desenvolver.
 - Documento de Sistemas de Jogo — a desenvolver.
 - Lore e Universo — a desenvolver.
@@ -192,6 +231,11 @@ Esses tópicos dependem de planejamento e aprovação explícita.
 - **0.2:** inclusão das regras reforçadas de uso dos assets e registro dos documentos iniciais de catálogo, identidade visual e planejamento da base técnica.
 - **0.3:** aprovação da Unity 6.3 com URP 2D; registro da preparação técnica inicial e envio posterior do pacote complementar de água.
 - **0.4:** Unity 6.3 LTS (6000.3.28f1) instalada; projeto CODEXIA criado com o template Universal 2D; pacote principal importado sem ProjectSettings; criação do [[Relatório de Validação Técnica]].
+- **0.10 (12/11/2026):** energia como origem dos poderes e elfo negro como questline principal aprovados para mais à frente; o jogo começa em frente à casa; mundo em zonas, como no Stardew (6.4).
+- **0.9 (12/11/2026):** gênero RPG simulador (pesca, plantio, coleta, caça, questlines); lore da protagonista e do Tio Hank (5.1); início na vila junto à cachoeira (6.3); incidente da Unity 6.6 e volta para a 6.3.
+- **0.8:** regra de arte nova; mapa de teste com temperado + rio + selva (ver Level Design 4.6).
+- **0.7:** mundo definido como continente; criação do [[CODEXIA - Level Design]]; foco passa à construção do mundo.
+- **0.6:** primeira versão jogável (personagem provisório, vida, inventário, HUD, objetos que falam); patch URP 2D Lit aplicado; executável Teste 02.
 - **0.5:** adoção das camadas do pacote; registro das diretrizes de C#; criação da cena de validação "Área Inicial" e do primeiro executável de teste.
 
 ## 15. Estado atual do trabalho
@@ -213,7 +257,15 @@ Esses tópicos dependem de planejamento e aprovação explícita.
 - Cena de validação `Validacao - Area Inicial` montada só com tiles e prefabs originais; Play Mode com 0 erros e 0 avisos.
 - Primeiro executável de teste para Windows (`Builds\Teste 01 - Area Inicial\CODEXIA.exe`), com build bem-sucedido.
 
+- Patch URP 2D Lit 6.3 aplicado (materiais, shaders e cenas demo; o URP Asset do pacote não foi importado).
+- **Versão jogável** criada com 4 subagentes (referências, assets, scripts, HUD/cena): personagem demo como provisório (exceção aprovada), movimento 8 direções, vida 10 HP com invencibilidade/knockback/flash, inventário de 18 slots (9 de hotbar), HUD em uGUI criada por código, diálogo com estátua, poço (cura), placas e baú; 2 pilares rúnicos que causam dano; 10 coletáveis. Arquitetura Core/Shared/UI com Assembly Definitions.
+- Testado no editor (Play Mode): andar, câmera, dano, coleta, inventário e diálogo funcionando, 0 erros. Executável `Builds\Teste 02 - Jogavel\CODEXIA.exe` gerado.
+
 ### Próximas atividades
+
+- Revisar a [[Arquitetura de Código - Versão Jogável]] (aprovada para implementar e revisar depois).
+- Testes ainda não feitos no editor: abrir o baú, usar o Pote de água, desmaio/respawn, controle (gamepad).
+- Definir o protagonista original (substitui o personagem demo provisório).
 
 - Testar o executável no computador do usuário e registrar o resultado.
 - Confirmar a ordenação por profundidade (Custom Axis 0, 1, 1).

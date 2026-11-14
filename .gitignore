@@ -2,3 +2,6 @@
 # Backup verificado em V:\Programacao\CODEXIA Backups\
 *.zip
 *.unitypackage
+
+# Arte de terceiros (Sea of Stars, Sabotage Studio) - uso pessoal/estudo, NUNCA versionar
+assets/

@@ -3,7 +3,7 @@ tipo: documento
 categoria: validacao-tecnica
 projeto: CODEXIA
 status: em-andamento
-versao: 0.2
+versao: 0.3
 idioma: pt-BR
 tags:
   - codexia
@@ -186,7 +186,40 @@ O único material de água recebido nesta etapa é `TX waterreference.jpg`, uma 
 - O ZIP **já foi enviado ao GitHub** (commit de 12/11/2026 09:12) e continua no histórico do repositório. Retirá-lo do histórico exige uma limpeza à parte.
 - A remoção do arquivo do cofre depende do usuário (a ferramenta usada não apaga arquivos). O backup verificado está em `V:\Programação\CODEXIA Backups\`.
 
+## 12. Etapa 3 — versão jogável (12/11/2026)
+
+### 12.1 Patch URP 2D Lit 6.3 (aprovado)
+- Importados do patch do pacote: 4 materiais, 5 shaders e as 2 cenas demo. **Não importada** a pasta Rendering (URP Asset próprio do pacote).
+- Console após o patch: 0 erros; 3 avisos de desempenho: MT Props, MT Shadow e MT FX Rune Glow desativam o SRP Batcher 2D (`_TexelSize`/`_ST`).
+- A Global Light 2D da cena passou a iluminar todas as Sorting Layers (antes só Default), necessário com materiais Lit.
+
+### 12.2 Código
+- `Codexia.Core` e `Codexia.Shared` compilaram na primeira tentativa (`Codexia.Core.dll`, `Codexia.Shared.dll`).
+- `Codexia.UI` compilou ao reabrir o editor: Console com 0 erros.
+- O Script Updater foi recusado em todas as vezes (script original do pacote preservado).
+
+### 12.3 Teste em Play Mode (feito por mim no editor)
+| Sistema | Resultado |
+|---|---|
+| HUD | ✅ barra "HP 10/10", hotbar 1–9, dica de controles |
+| Movimento + câmera | ✅ o jogador anda e a câmera acompanha |
+| Interação/diálogo | ✅ "[E] Beber" no poço; diálogo abre e avança; o poço reconhece vida cheia |
+| Dano | ✅ HP 10 → 8 no pilar rúnico |
+| Coleta | ✅ "+1 Tijolo antigo"; ícone no slot 1 |
+| Inventário | ✅ painel abre/fecha com I; mostra nome e descrição |
+| Console | ✅ 0 erros durante todo o teste |
+| Baú, usar item, desmaio/respawn, gamepad | ⏳ não testados |
+
+Observação de teste: toques de tecla muito curtos (< 1 quadro) enviados pela automação não foram lidos; segurando ~0,15 s funcionou. Um toque normal no teclado já dura o suficiente.
+
+### 12.4 Executável
+- `V:\Programação\CODEXIA Unity\Builds\Teste 02 - Jogavel\CODEXIA.exe` (+ LEIA-ME com controles). Build concluído às 14:22.
+
+### 12.5 Ocorrência
+- A sessão anterior do editor não fechou corretamente (a Unity estava fechada ao retomar). Os backups de cena oferecidos foram recusados, porque não havia alterações sem salvar.
+
 ## 10. Histórico (do documento)
 
 - **0.1:** primeiro registro da preparação do ambiente, importação e validação técnica inicial.
+- **0.3:** patch URP 2D Lit, versão jogável testada no editor e Teste 02.
 - **0.2:** camadas do pacote importadas; ordenação por profundidade ajustada; cena "Área Inicial" e primeiro executável de teste.

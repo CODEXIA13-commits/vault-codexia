@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "CODEXIA - GDD.md",
+                "file": "Manual de Identidade Visual.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "CODEXIA - GDD"
+              "title": "Manual de Identidade Visual"
             }
           }
         ]
@@ -198,6 +198,9 @@
   },
   "active": "e6af125c467241ba",
   "lastOpenFiles": [
+    "CODEXIA - GDD.md",
+    "Catálogo de Assets.md",
+    "Arquitetura Técnica Inicial.md",
     "Diretrizes de Arquitetura e Padrões C#.md",
     "Relatório de Validação Técnica.md",
     "Pixel Art Top Down - Basic v1.2.3.zip~RF3f7b28.TMP",
@@ -206,11 +209,8 @@
     "TX waterreference.jpg.~tmp",
     "TX waterreference.jpg",
     "Pixel Art Top Down - Basic v1.2.3.zip",
-    "Arquitetura Técnica Inicial.md",
     "Planejamento da Base Técnica.md",
     "Manual de Identidade Visual.md",
-    "Catálogo de Assets.md",
-    "CODEXIA - GDD.md",
     "4444.md",
     "oiu.md",
     "00_Parametros_Principais_System.md.md",
