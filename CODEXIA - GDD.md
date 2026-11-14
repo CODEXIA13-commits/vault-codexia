@@ -61,11 +61,7 @@ O pacote **Pixel Art Top Down - Basic v1.2.3** foi escolhido como referência vi
 - Não substituir assets adequados por formas provisórias.
 - Analisar os recursos existentes antes de decidir por novos recursos.
 - Qualquer adaptação futura deverá preservar os arquivos-fonte.
-- A orientação do projeto é utilizar os assets existentes como base visual, sem gerar arte nova e sem recorrer a placeholders quando houver recurso adequado.
-
-### 4.3 Água
-
-A estética da água de **Top Down Kingdom 2D** foi aprovada como referência complementar. O pacote de água será enviado para inspeção em conversa separada. A solução deverá combinar com o pacote visual principal e priorizar leveza. Uma possibilidade técnica a avaliar é usar texturas reutilizáveis com animação procedural ou shader/material leve. Essa abordagem é uma proposta, não uma decisão técnica final. Licenças deverão ser verificadas antes de incorporar assets de terceiros.
+- A orientação do projeto é utilizar os assets existentes como base visual, sem gerar arte nova, a não ser que haja necessidade e sem recorrer a placeholders quando houver recurso adequado.
 
 ## 5. Protagonista
 
@@ -133,13 +129,11 @@ A prioridade imediata é planejar e construir a base do jogo. Esses sistemas ser
 
 ## 8. Diretrizes técnicas iniciais
 
-- Engine aprovada: **Unity 6.3**.
-- Pipeline aprovado: **Universal Render Pipeline (URP) com Renderer 2D**.
+- Engine aprovada: **Unity
 - C# é a linguagem planejada; versão e configuração ainda precisam ser definidas pelo editor/instalação.
 - A solução visual deverá combinar recursos em sprites/texturas com elementos procedurais quando fizer sentido.
 - Desempenho e fluidez são requisitos importantes.
 - A arquitetura técnica será definida antes da implementação.
-- O pacote visual principal possui recursos e correções direcionados a URP 2D; a configuração real deverá ser validada no projeto Unity.
 
 ## 9. Ordem de desenvolvimento proposta
 
@@ -181,9 +175,7 @@ Esses tópicos dependem de planejamento e aprovação explícita.
 
 ### Confirmado
 
-- RPG 2D top-down em pixel art na Unity 6.3.
-- Universal Render Pipeline (URP) com Renderer 2D.
-- Mundo aberto e conectado.
+- Mundo semi aberto e conectado.
 - **Formato do mundo: continente contínuo** com regiões conectadas por terra e fronteiras naturais (aprovado em 12/11/2026). Planejamento em três níveis (Mundo → Região → Área) no [[CODEXIA - Level Design]].
 - **Arte nova (aprovado em 12/11/2026):** permitida apenas para o que **não existe** no pacote (água, terra, areia, selva, cogumelos, tamanhos de pedra etc.), redesenhada no grid de 32 px a partir das folhas de referência enviadas pelo usuário. Continua proibido recriar, recolorir ou substituir o que o pacote já tem.
 - **Gênero e lore (12/11/2026):** RPG simulador com pesca, plantio, coleta, caça e questlines; lore da caçadora criada pelo Tio Hank (5.1); início na vila junto à cachoeira (6.3).
